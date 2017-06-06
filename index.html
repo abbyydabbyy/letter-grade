@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <div style="display:flex;width:50%;">
+        <div>Enter grade here</div>
+        <div>
+            <input id="grades" ></input> 
+            <button type="button" id="grade-button">Submit</button>
+        </div>
+    </div>
+<div id="grade-area"></div>
+</body>
+
+<script>
+    // This set's the event...
+    document.getElementById("grade-button").onclick= getgrade;
+   
+    function getgrade() {
+        console.log('getgrade() started...');
+        var grades = $("#grades").val().trim();
+        grades = grades.split(" ");
+        var  text;
+        var x = 0;
+        x = document.getElementById("grades").value;
+        console.log('x is'+ x);
+            
+        if (isNaN(x)) {
+            text = "USE NUMBERS ONLY" ;
+            
+        }
+    
+        if (x < 69) {
+            text = "Your grade is an F";
+        } 
+        else if (x < 71) {
+            text = "Your grade is a D";
+        }
+        else if (x < 80) {
+            text = "Your grade is a C";
+        }
+        else if (x < 90) {
+            text = " Your grade is a B";
+        }
+        else if (x <= 100)  {
+            text = "Your grade is an A";
+        }
+    document.getElementById("grade-area").innerHTML = text ;    
+    }
+    
+    
+   
+</script>
+
+</html>
